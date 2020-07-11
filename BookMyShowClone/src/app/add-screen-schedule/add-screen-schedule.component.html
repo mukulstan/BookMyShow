@@ -1,0 +1,119 @@
+
+<form [formGroup]="addScreenScheduleForm" (ngSubmit)="onSubmit(addScreenScheduleForm.value)">
+  
+  <div class="card-body">
+    <div class="form-row">
+        <div class="form-group">
+            <label>Movie Name</label>
+            <input type="text" class="form-control" placeholder="movieName" formControlName="movieName">
+        </div>
+    </div>
+</div>
+
+
+<div class="card-body">
+    <div class="form-row">
+        <div class="form-group">
+            <label>Start Date</label>
+            <input type="text" class="form-control" placeholder="startDate" formControlName="startDate" >
+        </div>
+    </div>
+</div>
+<div class="card-body">
+    <div class="form-row">
+        <div class="form-group">
+            <label>End Date</label>
+            <input type="text" class="form-control" placeholder="endDate" formControlName="endDate" >
+        </div>
+    </div>
+</div>
+<div class="card-body">
+    <div class="form-row">
+        <div class="form-group">
+
+            <div formArrayName="movieTimeArray">
+                <div style="margin-top:5px; margin-bottom:5px;" 
+                *ngFor="let screenSchedule of addScreenScheduleForm.get('movieTimeArray')['controls']; let i=index">
+                    
+                    <div [formGroupName]="i">
+            <label>Movie StartTime  </label>    
+            <select  formControlName="movieStartTime" class="form-control">
+                <option [value]="time" 
+                *ngFor="let time of timeArray">{{time}}</option>
+            </select>
+
+        </div>
+    </div>
+</div>
+<button (click)="addMovieStartTime()">Add next Show</button>
+</div>
+</div>
+</div>
+
+
+<div class="card-body">
+    <div class="form-row">
+        <div class="form-group">
+            <label>Screen Name  </label>    
+            <select multiple  formControlName="screenName" class="form-control"
+             (change)="onScreenName()">
+                <option [value]="screen.screenName" 
+                *ngFor="let screen of screenSectionData">{{screen.screenName}}</option>
+            </select>
+
+        </div>
+    </div>
+</div>
+
+<div class="card-body">
+  <div class="form-row">
+      <div class="form-group">
+        <!-- *ngFor="let screensSection of screenSectionSelected"> -->
+        <div> 
+      <!-- Seat Ticket Price For : {{screensSection.screenName}} -->
+<div >
+    <!-- *ngFor="let section of screensSection.sections  "> -->
+<!-- {{section}} Section Ticket -->
+
+<div formArrayName="screensData">
+    <div style="margin-top:5px; margin-bottom:5px;" 
+    *ngFor="let screenSchedule of addScreenScheduleForm.get('screensData')['controls']; let i=index">
+        
+        <div [formGroupName]="i">
+         
+                  <div formArrayName="ticketSectionArray">
+                    <div style="margin-top:5px; margin-bottom:5px;" 
+                    *ngFor="let ticketArray of screenSchedule.get('ticketSectionArray').controls; let j=index">
+                     <div [formGroupName]="j">         
+                          <div class="form-inline">
+                            <input type="text"
+                            class="form-control"
+                            id="city"
+                            placeholder="City"
+                            name="type"
+                            formControlName="ticketPerSection" 
+                            style="margin-right:5px;" 
+                            required>
+                                  </div>
+                          </div>
+                  </div>
+          </div>
+          </div>
+       
+  
+          </div>
+      </div>
+  </div>
+</div>
+</div>
+</div>
+</div>
+ <pre>{{addScreenScheduleForm.value | json}}</pre>
+  
+  <button type="submit" class="btn btn-success">Submit</button>
+  <button type="button" class="btn btn-basic" >Cancel</button>
+</form>
+
+
+
+

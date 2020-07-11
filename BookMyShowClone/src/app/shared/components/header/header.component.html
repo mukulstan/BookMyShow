@@ -1,0 +1,20 @@
+<header class="site-header">
+    <div class="wrapper">
+        <div class="row">
+            <div class="col text-left">
+                <div class="points-got"><span class="sprite-icons trophy-icon"></span>Points: {{totalPoints}}</div>
+            </div>
+            <div class="col text-center">
+                <div class="level-numbr">Level: {{level}} </div>
+            </div>
+            <div class="col text-right">
+                <div ngbDropdown class="d-inline-block">
+                    <div class="profile-detail" ngbDropdownToggle><span class="profile-img"><img src="assets/images/profile.png" width="30" height="30" alt="Profile Image" ngbDropdownToggle></span>{{userName}}</div>
+                    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                        <button (click)="logout()" ngbDropdownItem>Sign out</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

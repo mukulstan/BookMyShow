@@ -1,0 +1,118 @@
+<form [formGroup]="addMovieForm" (ngSubmit)="onSubmit(addMovieForm.value)">
+
+    <div class="card-body">
+        <div class="form-row">
+            <div class="form-group">
+                <label>Movie Name</label>
+                <input type="text" class="form-control" placeholder="movieName" formControlName="movieName">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card-body">
+        <div class="form-row">
+            <div class="form-group">
+                <label> Release Date </label>
+                <input type="text" class="form-control" placeholder="startDate" formControlName="releaseDate">
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="form-row">
+            <div class="form-group">
+                <label>Duration</label>
+                <input type="text" class="form-control" placeholder="endDate" formControlName="duration">
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="card-body">
+        <div class="form-row">
+            <div class="form-group">
+                <label>Trailer Link</label>
+                <input type="text" class="form-control" placeholder="endDate" formControlName="trailerLink">
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body">
+        <div class="form-row">
+            <div class="form-group">
+                <div class="card" formArrayName="genre">
+                    <label>Genre : </label>
+                    <div *ngFor="let value of addMovieForm.controls['genre'].value; let x = index;  trackBy: trackByFn">
+                        
+                        <input type="text" formControlName="{{x}}">
+                    </div>
+                    <div>
+                        <button (click)="addNewGenre()">Add Genre</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body">
+        <div class="form-row">
+            <div class="form-group">
+                <div class="card" formArrayName="language">
+                    <label>Language : </label>
+                    <div *ngFor="let value of addMovieForm.controls['language'].value; let x = index;  trackBy: trackByFn">
+                        
+                        <input type="text" formControlName="{{x}}">
+                    </div>
+                    <div>
+                        <button (click)="addLanguage()">Add Language</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div formArrayName="cast">
+        <div style="margin-top:5px; margin-bottom:5px;"
+            *ngFor="let cast of addMovieForm.get('cast')['controls']; let i=index">
+
+            <div [formGroupName]="i">
+                <div class="form-inline">
+                    <input type="text" class="form-control" id="city" placeholder="actorName" name="type"
+                        formControlName="actorName" style="margin-right:5px;" required>
+                        <input type="text" class="form-control" id="city" placeholder="actingName" name="type"
+                        formControlName="actingName" style="margin-right:5px;" required>
+                        <input type="text" class="form-control" id="city" placeholder="role" name="type"
+                        formControlName="role" style="margin-right:5px;" required>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <button (click)="addCast()">Add Cast</button>
+
+    <div formArrayName="crew">
+    <div style="margin-top:5px; margin-bottom:5px;"
+        *ngFor="let cast of addMovieForm.get('crew')['controls']; let i=index">
+
+        <div [formGroupName]="i">
+            <div class="form-inline">
+                <input type="text" class="form-control" id="city" placeholder="crewName" name="type"
+                    formControlName="crewName" style="margin-right:5px;" required>
+                    <input type="text" class="form-control" id="city" placeholder="role" name="type"
+                    formControlName="role" style="margin-right:5px;" required>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<button (click)="addCrew()">Add Crew</button>
+
+    <pre>{{addMovieForm.value | json}}</pre>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+    <button type="button" class="btn btn-basic">Cancel</button>
+</form>
