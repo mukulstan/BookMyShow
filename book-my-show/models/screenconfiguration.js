@@ -4,55 +4,59 @@ const ScreenConfigurtionSchema = new mongoose.Schema({
 
   mall_id: {
     type: String,
-    required: true,
+    // required: true,
   },
-  number_of_screens: {
+  numberOfScreens: {
     type: Number,
     required: true,
     minLength: 1,
   },
-  
-    name_of_screen: {
-        type: String,
+  screendata: [{
+    name: {
+      type: String,
       minLength: 5,
       maxLength: 1024,
       requird: true
     },
-    number_of_section: {
+    numberOfSection: {
       type: Number,
       required: true,
     },
-    section_data: [{
-      name_of_section: {
+    sectiondata: [{
+      name: {
         type: String,
         minLength: 5,
         maxLength: 1024,
         requird: true
       },
-      number_of_rows: {
+      numberOfRows: {
         type: Number,
         required: true,
       },
-      seats_in_row: {                //keepstatus of each seat --like it may not to be used for sale  reason -broke/anything else 
+      seatsInRow: [{
+        numberOfSeatsInRow: {                //keepstatus of each seat --like it may not to be used for sale  reason -broke/anything else 
+          type: Number,
+        }
+      }],
+      name_of_seat: {                                              //[{row1:gold1},{row1:gold2},{row2:silvver2} ]
         type: Array,
-        required: true,
+        //  required:true
       },
-      name_of_seat:{                                              //[{row1:gold1},{row1:gold2},{row2:silvver2} ]
-         type:Array,
-         required:true
+      totalTickets: {
+        type: Number,
       },
-      ticket_price: {
-        type: Number,  
-        required:true,
+      bookedTickets: {
+        type: Number,
+      },
+      availableTickets: {
+        type: Number,
       },
       seating_naming_from: {
         type: String,
-        minLength: 5,
-        maxLength: 10,
       }
     }]
 
-  
+  }]
 
 })
 

@@ -1,47 +1,51 @@
-  
 const mongoose = require('mongoose')
-
+const Schema = mongoose.Schema;
 const ScreenScheduleSchema = new mongoose.Schema({
 
-    mall_id: {
-        type: Schema.Types.ObjectId,
-        required: true,
-    },
-    screen_id: {
-        type: Schema.Types.ObjectId,
-        required: true,
-    },
-    movie_schedule: [{
-     movie_id: {  
-         type: Schema.Types.ObjectId,
-        requird: true
-      },
-      time_slots: [{
-        start_time:{
+    mallId: {
         type: String,
-        required: true,
+        // required: true,
     },
-    end_time:{
-        type: String,
-        required: true,
-    }
-}]
+    movieId: {
+        type: Schema.Types.ObjectId,
+        ref: 'movies'
+
+    },
+    screenName: {
+        type: Array,
+        // required: true,
+    },
+    movieTimeArray: [{
+        movieStartTime: {
+            type: String,
+            required: true,
+        },
+        movieEndTime: {
+            type: String,
+            // required: true,
+        }
     }],
-    price_seat_section:[{
-      section:{type:String},
-      price:{type:Number},
+
+    showCount: {
+        type: Number
+    },
+
+    screensData: [{
+        screenId: {
+            type: String
+        },
+        ticketSectionArray: [{
+            sectionName: { type: String },
+            ticketPerSection: { type: Number },
+        }],
     }],
-    start_date: {
+    startDate: {
         type: Date,
         required: true,
     },
-    end_date: {
+    endDate: {
         type: Date,
     },
-    
 })
 
-const ScreenSchedule = mongoose.model('ScreenSchedule', ScreenScheduleSchema);
-
-
-exports.ScreenScheduleSchema = ScreenSchedule
+module.exports = mongoose.model('screenSchedule', ScreenScheduleSchema);

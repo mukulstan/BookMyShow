@@ -2,32 +2,32 @@ const mongoose = require('mongoose')
 
 const BookingTicketSchema = new mongoose.Schema({
 
-    mall_id: {
+    mallId: {
         type: String,
         required: true,
     },
-    screen_id: {
+    screenId: {
         type: String,
         required: true,
     },
-    movie_id: {
+    movieId: {
         type: String,
         requird: true
     },
-    user_id: {
+    userId: {
         type: String,
         requird: true
     },
-     number_of_tickets: {
+     numberOfTickets: {
         type: Number,
         required: true
     },
-    seat_data:[{
+    seatData:[{
         seat_number:{
             type:String,
             requird:true
         },
-        seat_type:{
+        seatType:{
             type:String,
             requird:true
         },
@@ -38,32 +38,32 @@ const BookingTicketSchema = new mongoose.Schema({
         }
     }],
 
-    total_cost: {
+    totalCost: {
         type: Number,
         required: true
     },
 
 
     
-    cart_add_time: {
+    cartAddTime: {
         type: Date,
         required: true,
     },
-    payment_status:{
+    paymentStatus:{
         type: String,
         required: true,
     },
-    booking_status:{
+    bookingStatus:{
         type: String,                 //1-confirmed 2-payment-pending
          required: true,
     },
 
-    time_slots: {
+    timeSlots: {
         start_time:{
         type: String,
         required: true,
     },
-    end_time:{
+    endTime:{
         type: String,
         required: true,
     },
