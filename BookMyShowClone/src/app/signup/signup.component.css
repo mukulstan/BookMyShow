@@ -1,0 +1,70 @@
+.main-section{
+background-image: url("../../assets/img/login.jpg");
+background-size: cover;
+/* background-attachment: fixed; */
+background-repeat: no-repeat;
+background-position: center center;
+height: 100%;
+min-height: 600px;
+}
+
+.signup-form{
+    border: 2px solid ;
+    border-radius: 2px;
+}
+.fa{
+    color:white
+}
+
+.form-group i{
+position: absolute;
+}
+.hr-light{
+    border-top: 1px solid white;
+}
+
+.card {
+    background-color: rgba(126, 123, 215, 0.2);
+}
+::placeholder{
+    color: white;
+    margin-left: 2px;
+}
+.floating-label {
+    font-size: 13px;
+    color: #cccccc;
+    position: absolute;
+    pointer-events: none;
+    top: 9px;
+    left: 12px;
+    transition: all 0.1s ease;
+}
+
+input:focus ~ .floating-label,
+input:not(:focus):valid ~ .floating-label {
+    top: -15px;
+    bottom: 0px;
+    left: 0px;
+    font-size: 11px;
+    opacity: 1;
+    color: #404040;
+}
+
+.btn-indigo{
+    background-color: #3f51b5!important;
+    color: white;
+    display: block;
+    /* flex-direction: row; */
+    /* justify-content: center; */
+    margin: auto;
+}
+
+.form-control{
+    border-width: 0px 0px 1px 0px;
+    border-color:white;
+    margin-left: 2.5rem;
+    border-style: solid;
+    background:transparent;
+    width:calc(100% - 2.5rem) !important
+}
+

@@ -73,9 +73,14 @@ onChangeSection(e,control) {
         control.push(this.formBuilder.group({
         //  rowNumber:['', Validators.required],
          numberOfSeatsInRow:['', Validators.required],
+         emptySpaces:this.formBuilder.array([]),
+         totalSeatSpaces:['', Validators.required],
+         
 }))
+
     }
-    console.log("numberOfRows",control)
+    console.log("fRows",control)
+    // console.log("numberOfRows",control.controls[0].value)
 }
 
 
