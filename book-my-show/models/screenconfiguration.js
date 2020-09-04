@@ -25,8 +25,7 @@ const ScreenConfigurtionSchema = new mongoose.Schema({
     sectiondata: [{
       name: {
         type: String,
-        minLength: 5,
-        maxLength: 1024,
+
         requird: true
       },
       numberOfRows: {
@@ -36,9 +35,15 @@ const ScreenConfigurtionSchema = new mongoose.Schema({
       seatsInRow: [{
         numberOfSeatsInRow: {                //keepstatus of each seat --like it may not to be used for sale  reason -broke/anything else 
           type: Number,
+        },
+        emptySpaces:{
+          type: Array,
+        },
+        totalSeatSpaces:{
+          type: Number, 
         }
       }],
-      name_of_seat: {                                              //[{row1:gold1},{row1:gold2},{row2:silvver2} ]
+      nameOfSeat: {                                              //[{row1:gold1},{row1:gold2},{row2:silvver2} ]
         type: Array,
         //  required:true
       },
