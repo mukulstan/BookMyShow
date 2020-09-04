@@ -8,7 +8,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddScreenComponent } from './add-screen/add-screen.component';
 import {AddScreenScheduleComponent} from './add-screen-schedule/add-screen-schedule.component'
 import {AddMovieComponent} from './movie/add-movie/add-movie.component'
-import { DashboardComponent } from './dashboard/dashboard.component';
+
 import { SeatsArrangmentComponent } from './seats-arrangment/seats-arrangment.component';
 
 
@@ -16,7 +16,6 @@ import { SeatsArrangmentComponent } from './seats-arrangment/seats-arrangment.co
   declarations: [
     AppComponent,
     AddScreenComponent,
-    DashboardComponent,
     AddMovieComponent,
     AddScreenScheduleComponent,
     SeatsArrangmentComponent

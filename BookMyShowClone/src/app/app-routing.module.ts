@@ -10,7 +10,7 @@ const routes: Routes = [
 // },
   { path: 'signup', loadChildren: () => import('./signup/signup.module').then(m => m.SignupModule) },
   // { path: 'forgot-password', loadChildren: () => import('./forgot-password/forgot-password.module').then(m => m.ForgotPasswordModule) },
-  // { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomeModule) },
+  { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) },
   { path: 'add-screen', loadChildren: () => import('./add-screen/add-screen.module').then(m => m.AddScreenModule) },
   { path: 'add-screen-schedule', loadChildren: () => import('./add-screen-schedule/add-screen-schedule.module').then(m => m.AddScreenScheduleModule) },
   { path: 'add-movie', loadChildren: () => import('./movie/add-movie/add-movie.module').then(m => m.AddMovieModule) },
