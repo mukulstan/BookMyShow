@@ -34,6 +34,7 @@ background:rgba(0,0,0,.8);
     width: 100%;
     max-width: 230px;
 }
+
 .movie-details{
     color:white;
     padding-top: 10px;
@@ -77,6 +78,7 @@ background:rgba(0,0,0,.8);
     padding-top: 21px;
     padding-left: 34px;
     margin-left: -30px;
+    margin-bottom: 10px;
 }
 
 
@@ -107,8 +109,9 @@ background:rgba(0,0,0,.8);
 .voting-text{
     margin-top:-8px ;
     color:#999;
-    font-size: 11px;   
-    }
+    font-size: 11px;
+    margin-bottom: 19px;
+         }
 .individual-rating{
     margin-left: 8px;
     color:#000;
@@ -123,6 +126,64 @@ margin-left: 52px;
    // margin :-10px 4px 10px 40px ;
 
 
+}
+
+.animation-type{
+    background-color: #eff2f5;
+    color: #999;
+    padding: 5px 10px;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 12px;
+    margin-right: 5px;
+}
+
+.movie-slogan{
+    color: #666;
+    margin:10px 3px
+}
+.offers{
+    border:1px dotted #cccccc;
+    padding: 12px;
+}
+
+// .container-text{
+// flex: 1 1 auto
+// }
+
+.bms img {
+    max-width: 30px;
+    align-self: flex-start;
+}
+.hotstar img {
+    max-width: 40px;
+    align-self: center;
+    border-radius: 50%;
+}
+.hotstar button{
+    height: 40px;
+    margin: 0px auto;
+    // justify-content: center;
+}
+
+.channel h6{
+    color: #000;
+    line-height: 21px;
+    font-size: 14px;
+    padding-top: 4px;
+
+}
+.channel p{
+    color:#000;
+    font-size: 19px;
+    line-height: 24px;
+    // line-height: 16px;
+}
+
+.trending img {
+    height: auto;
+    width: 100%;
+    max-width: 150px;
 }
 
 
