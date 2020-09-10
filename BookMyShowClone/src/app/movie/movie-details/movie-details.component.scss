@@ -1,0 +1,187 @@
+.imgBanner{
+    // background-image: url("../../assets/img/fast&furious.jpg");
+    min-height:200px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background:rgba(0,0,0,.8);
+    }
+    .wrapper{
+        margin-top:-150px
+    }
+    .wrapper img{
+        height: auto;
+        width: 100%;
+        max-width: 230px;
+    }
+    
+    .movie-details{
+        color:white;
+        padding-top: 10px;
+    }
+    
+    .round{
+        border-radius: 20px;
+        font-weight: 400;
+        padding: 5px 10px;
+        font-size: 11px;
+        border:1px solid white
+    }
+    .round:first-child{
+        margin-right: 20px;
+    }
+    .movie-details hr{
+        width: 100%;
+        }
+    
+    .fa-heart{
+        color:#c9363c;
+        // font-size: 22px;
+    }
+    .fa-facebook{   
+       text-align: center;
+       background-color: #3b5998 ;
+       border-radius: 21px;
+       width: 40px;
+       height: 40px;
+       /* margin-bottom: 18px; */
+       padding-top: 5px;
+       margin-top: -9px;
+    }
+    
+    .fa-twitter{
+        @extend .fa-facebook;
+        background-color: #5ea9dd;
+         }
+
+         .fa-pinterest{
+            @extend .fa-facebook;
+            background-color:#bd081c
+        }
+
+
+   
+    .rating-container{
+        background-color: #f9f9f9;
+        padding-top: 21px;
+        padding-left: 34px;
+        margin-left: -30px;
+        margin-bottom: 10px;
+    }
+    
+    
+    
+    
+    
+    .heart-size{
+        // color:#c9363c;
+        font-size: 22px;
+    }
+    
+    .number{
+        color: black;
+        font-size: 28px;
+        margin-left: 8px;
+    
+    }
+    
+    .rating{
+        font-size: 20px;
+        color: black;
+        margin-left: 30px;
+        margin-right: 4px;
+    }
+    .voting-text{
+        margin-top:-8px ;
+        color:#999;
+        font-size: 11px;
+        margin-bottom: 19px;
+             }
+    .individual-rating{
+        margin-left: 8px;
+        color:#000;
+        font-size: 20px; 
+    
+    }
+    
+    
+    .rating-text{
+    @extend .voting-text;
+    margin-left: 52px;
+       // margin :-10px 4px 10px 40px ;
+    
+    
+    }
+    
+    .animation-type{
+        background-color: #eff2f5;
+        color: #999;
+        padding: 5px 10px;
+        font-size: 12px;
+        text-align: center;
+        border-radius: 12px;
+        margin-right: 5px;
+    }
+    
+    .movie-slogan{
+        color: #666;
+        margin:10px 3px
+    }
+    .offers{
+        border:1px dotted #cccccc;
+        padding: 12px;
+    }
+    
+    // .container-text{
+    // flex: 1 1 auto
+    // }
+    
+    .bms img {
+        max-width: 30px;
+        align-self: flex-start;
+    }
+    .hotstar img {
+        max-width: 40px;
+        align-self: center;
+        border-radius: 50%;
+    }
+    .hotstar button{
+        height: 40px;
+        margin: 0px auto;
+        // justify-content: center;
+    }
+    
+    .channel h6{
+        color: #000;
+        line-height: 21px;
+        font-size: 14px;
+        padding-top: 4px;
+    
+    }
+    .channel p{
+        color:#000;
+        font-size: 19px;
+        line-height: 24px;
+        // line-height: 16px;
+    }
+    
+    .trending img {
+        height: auto;
+        width: 100%;
+        max-width: 150px;
+    }
+    
+    .cast img{
+     border-radius: 50%;
+     width:130px !important
+    }
+    
+    .cast h5 {
+        margin-bottom: 0px;
+        line-height: 15px;
+        // text-align: center;
+ }
+ .actor-name{
+    margin-bottom: 0px;
+    line-height: 15px;
+    color:#49ba8e
+ }

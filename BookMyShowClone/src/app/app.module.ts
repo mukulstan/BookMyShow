@@ -8,9 +8,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddScreenComponent } from './add-screen/add-screen.component';
 import {AddScreenScheduleComponent} from './add-screen-schedule/add-screen-schedule.component'
 import {AddMovieComponent} from './movie/add-movie/add-movie.component'
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { SeatsArrangmentComponent } from './seats-arrangment/seats-arrangment.component';
 
+import { AngularMaterialModule } from './angular-material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MovieDetailsComponent } from './movie/movie-details/movie-details.component';
 
 @NgModule({
   declarations: [
@@ -18,18 +21,22 @@ import { SeatsArrangmentComponent } from './seats-arrangment/seats-arrangment.co
     AddScreenComponent,
     AddMovieComponent,
     AddScreenScheduleComponent,
-    SeatsArrangmentComponent
+    SeatsArrangmentComponent,
+    MovieDetailsComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule, ReactiveFormsModule 
+    AngularMaterialModule,
+    FormsModule, ReactiveFormsModule, BrowserAnimationsModule 
     
 
 
   ],
   providers: [CommonService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

@@ -1,138 +1,207 @@
+<h2 class="text-center"> Add Screens With Details</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 offset-sm-3">
+      <div class="details-container">
+        <h2>Screen Value</h2>
+        <h5> Select Number of Screen</h5>
+        <div class="form-group">
+          <input class="form-control" type="number" placeholder="Number OF Screens">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 offset-sm-3">
+      <div class="details-container mt-4">
+        <h2>Screen Details</h2>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-6">
+              <h5> Name of Screen</h5>
+              <div class="form-group">
+                <input class="form-control" type="number" placeholder="Number OF Screens">
+
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <h5> Number of Sections</h5>
+              <div class="form-group">
+                <input class="form-control" type="number" placeholder="Number OF Sections">
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-6">
+              <h5> Name of Sections</h5>
+              <div class="form-group">
+                <input class="form-control" type="number" placeholder="Number OF Sections">
+              </div>
+            </div>
+
+
+            <div class="col-sm-6">
+              <h5> Number of Rows</h5>
+              <div class="form-group">
+                <input class="form-control" type="number" placeholder="Number OF Screens">
+
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col-sm-6">
+              <h5> Seats In Row</h5>
+              <div class="form-group">
+                <input class="form-control" type="number" placeholder="Number OF Sections">
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <h5> Vacant Spaces</h5>
+              <div class="form-group">
+                <input class="form-control" type="number" placeholder="Number OF Screens">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-success m-auto">Submit</button>
+          </div>
+
+        </div>
+      </div>
+     
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <h2>User Form</h2>
 
 <form [formGroup]="dynamicAddForm" (ngSubmit)="onSubmit(dynamicAddForm.value)" #f="ngForm">
-  
+
   <div class="card-body">
     <div class="form-row">
-        <div class="form-group">
-            <label>Number of Screens</label>
-            <select formControlName="numberOfScreens" class="form-control" (change)="onChangeScreen($event)">
-                <option value=""></option>
-                <option *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]">{{i}}</option>
-            </select>
+      <div class="form-group">
+        <label>Number of Screens</label>
+        <select formControlName="numberOfScreens" class="form-control" (change)="onChangeScreen($event)">
+          <option value=""></option>
+          <option *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]">{{i}}</option>
+        </select>
 
-        </div>
+      </div>
     </div>
-</div>
-  
+  </div>
+
   <div formArrayName="screendata">
-    <div style="margin-top:5px; margin-bottom:5px;" 
-    *ngFor="let name of dynamicAddForm.get('screendata')['controls']; let i=index">
+    <div style="margin-top:5px; margin-bottom:5px;"
+      *ngFor="let name of dynamicAddForm.get('screendata')['controls']; let i=index">
       <fieldset>
-        
+
         <div [formGroupName]="i">
           <div class="form-inline">
             <div class="form-group">
               <label style="margin-right:80px;" class="col-form-label" for="city">Name of Screen</label>
-              <input type="text"
-                     class="form-control"
-                     id="city"
-                     placeholder="City"
-                     name="type"
-                     formControlName="name" 
-                     style="margin-right:5px;" 
-                     required>
-                     <!-- <select formControlName="numberOfSection" class="form-control" (change)="onChangeSection($event,i)"> -->
-                     <div class="card-body">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Number of Sections</label>
-                                <select formControlName="numberOfSection" class="form-control"
-                                 (change)="onChangeSection($event,name.controls.sectiondata)">
-                                    <option value=""></option>
-                                    <option *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]">{{i}}</option>
-                                </select>
-                    
-                            </div>
-                        </div>
-                    </div></div>
+              <input type="text" class="form-control" id="city" placeholder="City" name="type" formControlName="name"
+                style="margin-right:5px;" required>
+              <div class="card-body">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label>Number of Sections</label>
+                    <select formControlName="numberOfSection" class="form-control"
+                      (change)="onChangeSection($event,name.controls.sectiondata)">
+                      <option value=""></option>
+                      <option *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]">{{i}}</option>
+                    </select>
+
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="form-inline">
             <div class="form-group">
               <div formArrayName="sectiondata">
-                <div style="margin-top:5px; margin-bottom:5px;" 
-                *ngFor="let sectionName of name.get('sectiondata').controls; let j=index">
+                <div style="margin-top:5px; margin-bottom:5px;"
+                  *ngFor="let sectionName of name.get('sectiondata').controls; let j=index">
                   <div [formGroupName]="j">
                     <div class="form-group">
-                    <label style="margin-right:5px;"  class="col-form-label" for="emailId">Section Name {{j+1}}</label>
-                    <input formControlName="name"
-                           class="form-control"
-                           style="margin-right:5px;" 
-                           type="email"
-                           placeholder="sectionName"
-                           id="address"
-                           name="address"
-                            />
+                      <label style="margin-right:5px;" class="col-form-label" for="emailId">Section Name {{j+1}}</label>
+                      <input formControlName="name" class="form-control" style="margin-right:5px;" type="email"
+                        placeholder="sectionName" id="address" name="address" />
                     </div>
-                    
-                    
 
-                        <div class="card-body">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label>Number of Rows</label>
-                                    <select formControlName="numberOfRows" class="form-control"
-                                     (change)="onSeatsInRowChange($event,sectionName.controls.seatsInRow)">
-                                        <option value=""></option>
-                                        <option *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]">{{i}}</option>
-                                    </select>
-                        
-                                </div>
-                            </div>
+
+
+                    <div class="card-body">
+                      <div class="form-row">
+                        <div class="form-group">
+                          <label>Number of Rows</label>
+                          <select formControlName="numberOfRows" class="form-control"
+                            (change)="onSeatsInRowChange($event,sectionName.controls.seatsInRow)">
+                            <option value=""></option>
+                            <option *ngFor="let i of [1,2,3,4,5,6,7,8,9,10]">{{i}}</option>
+                          </select>
+
                         </div>
+                      </div>
+                    </div>
 
-                  
-                  <div class="form-inline">
-                    <div class="form-group">
-                      <div formArrayName="seatsInRow">
-                         <div style="margin-top:5px; margin-bottom:5px;" *ngFor="let seats of sectionName.get('seatsInRow').controls; let k=index">
-                          <div [formGroupName]="k">
-                            <div class="form-group">
-                            <label style="margin-right:5px;"  class="col-form-label" for="emailId">Seats in Row {{k + 1}}</label>
-                            <input formControlName="numberOfSeatsInRow"
-                                   class="form-control"
-                                   style="margin-right:5px;" 
-                                   type="email"
-                                   placeholder="sectionName"
-                                   id="address"
-                                   name="address"
-                                    />
+
+                    <div class="form-inline">
+                      <div class="form-group">
+                        <div formArrayName="seatsInRow">
+                          <div style="margin-top:5px; margin-bottom:5px;"
+                            *ngFor="let seats of sectionName.get('seatsInRow').controls; let k=index">
+                            <div [formGroupName]="k">
+                              <div class="form-group">
+                                <label style="margin-right:5px;" class="col-form-label" for="emailId">Seats in Row
+                                  {{k + 1}}</label>
+                                <input formControlName="numberOfSeatsInRow" class="form-control"
+                                  style="margin-right:5px;" type="email" placeholder="sectionName" id="address"
+                                  name="address" />
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  </div>
                 </div>
               </div>
             </div>
           </div>
-          
+
         </div>
       </fieldset>
     </div>
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
   </div>
 
-  
-  <button type="submit" class="btn btn-success">Submit</button>
-  <button type="button" class="btn btn-basic" >Cancel</button>
+
+
+  <button type="button" class="btn btn-basic">Cancel</button>
 </form>
 
- <pre>{{dynamicAddForm.value | json}}</pre>
-
-
+<pre>{{dynamicAddForm.value | json}}</pre>

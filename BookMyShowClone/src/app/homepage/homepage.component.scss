@@ -1,0 +1,15 @@
+.event-title{
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    font-size: 15px;
+    color:black
+}
+
+.event-subtitle{
+    // white-space: nowrap; 
+    // overflow: hidden;
+    text-overflow: ellipsis; 
+    font-size: 13px;
+    color: grey;
+}
