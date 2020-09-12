@@ -15,6 +15,7 @@ import { AngularMaterialModule } from './angular-material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MovieDetailsComponent } from './movie/movie-details/movie-details.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +24,7 @@ import { MovieDetailsComponent } from './movie/movie-details/movie-details.compo
     AddScreenScheduleComponent,
     SeatsArrangmentComponent,
     MovieDetailsComponent,
+
 
   ],
   imports: [

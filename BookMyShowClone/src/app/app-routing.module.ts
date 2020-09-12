@@ -14,8 +14,8 @@ const routes: Routes = [
   { path: 'home', loadChildren: () => import('./homepage/homepage.module').then(m => m.HomepageModule) },
   { path: 'add-screen', loadChildren: () => import('./add-screen/add-screen.module').then(m => m.AddScreenModule) },
   { path: 'add-screen-schedule', loadChildren: () => import('./add-screen-schedule/add-screen-schedule.module').then(m => m.AddScreenScheduleModule) },
-  { path: 'add-movie', loadChildren: () => import('./movie/add-movie/add-movie.module').then(m => m.AddMovieModule) },
-  { path: 'movie-details', loadChildren: () => import('./movie/movie.module').then(m => m.MovieModule) },
+  { path: 'movie', loadChildren: () => import('./movie/movie.module').then(m => m.MovieModule) },
+  
   // { path: '**', component: NotfoundComponent },
   
 ];
@@ -27,3 +27,4 @@ const routes: Routes = [
 export class AppRoutingModule { }
 
 
+// { path: 'movie-details', loadChildren: () => import('./movie/movie.module').then(m => m.MovieModule) },

@@ -1,0 +1,53 @@
+.filter-container{
+    background-color: #dcdee0;
+    padding:12px 20px 12px 20px
+}
+
+.filter-container hr,.inner-container hr{
+    border-top: 2px solid #B0AEB8 ;
+}
+
+
+.outer-container{
+ padding: 10px;
+ background-color: #EEEFF2;
+}
+
+.inner-container{
+    background-color: #ffffff;
+    padding: 24px;
+    border:1px solid #fff;
+    border-color: 2px;
+}
+
+.circle-img{
+    border-radius: 50%;
+    width: 180px;
+}
+
+.fa-star{
+    color: #FFB700;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.genre{
+    background-color: #F5F8FD;
+    padding: 7px;
+    border: 1px solid white;
+    font-weight: 500;
+}
+
+.movie-details{
+    display: flex;
+    align-items: flex-start;
+}
+.date{
+    color: #9DA5AB;
+    margin-top: 4px;
+    font-size: 10px;
+    margin-left: 2px;
+}
+.inner-container p{
+    color: #9DA5AB;
+}
