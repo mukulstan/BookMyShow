@@ -1,0 +1,30 @@
+.outer-container{
+    background-color: #1E1F24;
+    padding: 20px ;
+}
+
+.inner-container{
+    background-color: #2E3037;
+    padding: 20px
+}
+
+.card-body{
+    background-color:#3A3D44
+     ;
+}
+
+.card-text,.fa-square{
+    color: #7B7E81;
+}
+.movie-dimension{
+    color: white;
+    margin-right: 10px;
+}
+
+.box {
+    // width: 500px; 
+    height: 102px;  
+    border: solid 3px #000;
+    border-color: #FF6969 transparent transparent transparent;
+    border-radius: 50%/100px 100px 0 0;
+  }

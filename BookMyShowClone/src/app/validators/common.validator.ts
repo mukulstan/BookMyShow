@@ -60,26 +60,26 @@ public static characterValidate(control: FormGroup) {
 }
 
 
-https://mdbootstrap.com/previews/docs/latest/html/intros/intro-register-classic-form.html
+// https://mdbootstrap.com/previews/docs/latest/html/intros/intro-register-classic-form.html
 
-https://mdbootstrap.com/docs/angular/css/background-image/#v-3
+// https://mdbootstrap.com/docs/angular/css/background-image/#v-3
 
-https://www.wozber.com/en-us/app/versions/local/story/education
-https://workstack.io/
-https://www.impactbnd.com/blog/18-award-winning-website-designs
+// https://www.wozber.com/en-us/app/versions/local/story/education
+// https://workstack.io/
+// https://www.impactbnd.com/blog/18-award-winning-website-designs
 
-https://tobiasahlin.com/blog/flexbox-break-to-new-row/
+// https://tobiasahlin.com/blog/flexbox-break-to-new-row/
 
-https://www.youtube.com/watch?time_continue=30&v=N0uCMHi1Mps
+// https://www.youtube.com/watch?time_continue=30&v=N0uCMHi1Mps
 
-https://dribbble.com/shots/4892731-Dashboard-Design
+// https://dribbble.com/shots/4892731-Dashboard-Design
 
-https://dribbble.com/shots/5363100-A-Influencer-Profile/attachments
+// https://dribbble.com/shots/5363100-A-Influencer-Profile/attachments
 
-https://medium.com/theymakedesign/website-dashboard-ui-examples-inspiration-5db21df04cbd
+// https://medium.com/theymakedesign/website-dashboard-ui-examples-inspiration-5db21df04cbd
 
-https://dribbble.com/shots/9830381-Management-System-for-Hospitals-and-Labs
+// https://dribbble.com/shots/9830381-Management-System-for-Hospitals-and-Labs
 
-https://in.pinterest.com/pin/556124253990865014/?nic_v2=1a2tk84cp
+// https://in.pinterest.com/pin/556124253990865014/?nic_v2=1a2tk84cp
 
-https://in.pinterest.com/pin/649081365033052821/?nic_v2=1a2tk84cp
+// https://in.pinterest.com/pin/649081365033052821/?nic_v2=1a2tk84cp

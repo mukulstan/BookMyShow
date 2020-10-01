@@ -10,11 +10,12 @@ data
   constructor() { }
 
   ngOnInit(): void {
-      this.data=this.data.seatsInRow
-       this.data.forEach((element,index) => {
-        element.totalSeatSpaces = Array(element.totalSeatSpaces).fill(0).map((x,i)=>i);     
+      // this.data=this.data.seatsInRow
+      //  this.data.forEach((element,index) => {
+      //   element.totalSeatSpaces = Array(element.totalSeatSpaces).fill(0).map((x,i)=>i);     
          
-       });
+      //  })
+       ;
     
 
   }

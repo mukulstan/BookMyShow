@@ -9,7 +9,7 @@ const routes: Routes = [
   // canLoad:[LoggedInUserGuard] 
 // },
   { path: 'signup', loadChildren: () => import('./signup/signup.module').then(m => m.SignupModule) },
-  // { path: 'forgot-password', loadChildren: () => import('./forgot-password/forgot-password.module').then(m => m.ForgotPasswordModule) },
+  { path: 'seats-arrangement', loadChildren: () => import('./seats-arrangment/seats-arrangment.module').then(m => m.SeatsArrangmentModule) },
   { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) },
   { path: 'home', loadChildren: () => import('./homepage/homepage.module').then(m => m.HomepageModule) },
   { path: 'add-screen', loadChildren: () => import('./add-screen/add-screen.module').then(m => m.AddScreenModule) },
