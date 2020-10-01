@@ -22,9 +22,35 @@
 }
 
 .box {
-    // width: 500px; 
     height: 102px;  
     border: solid 3px #000;
     border-color: #FF6969 transparent transparent transparent;
     border-radius: 50%/100px 100px 0 0;
   }
+  .col-sm-6 {
+    -moz-hyphens:auto;
+    -ms-hyphens:auto;
+    -webkit-hyphens:auto;
+    hyphens:auto;
+    word-wrap:break-word;
+ }
+.screen{
+    border: 2px solid #70E6BE;
+    border-radius: 19px;
+    padding: 3px;
+    color: white;
+    font-size: 12px;
+    width: 62px;
+    text-align: center;
+    margin-right: 100px;
+    margin-left: 30px;
+}
+
+.fa-clock{
+    color:white;
+    margin-top: 9px;
+    
+}
+
+
+
