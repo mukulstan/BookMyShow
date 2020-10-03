@@ -1,8 +1,8 @@
 .imgBanner{
     // background-image: url("../../assets/img/fast&furious.jpg");
     min-height:200px;
-    background-repeat: no-repeat;
-    background-position: center center;
+    // background-repeat: no-repeat;
+    // background-position: center center;
     background:rgba(0,0,0,.8);
     }
     .wrapper{
@@ -75,6 +75,7 @@
     .heart-size{
         // color:#c9363c;
         font-size: 22px;
+        align-self: center;
     }
     
     .number{
@@ -185,3 +186,19 @@
     line-height: 15px;
     color:#49ba8e
  }
+
+@media screen and (max-width: 720px) {
+.movie-details{
+    color:black !important;
+    padding-left: 24px !important;
+} 
+.center-small-screen{
+text-align: center;
+justify-content: center !important;
+}
+.movie-details div {
+margin-right: 0px !important;
+
+}
+}
+

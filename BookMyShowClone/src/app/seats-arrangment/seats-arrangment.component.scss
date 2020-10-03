@@ -1,3 +1,22 @@
+
+// @import "~bootstrap-4.0.0/scss/mixins/_breakpoints.scss";
+
+
+// @include media-breakpoint-down(sm) {
+// .remove-gutters {
+//     margin-right: 0;
+//     margin-left: 0;
+// }
+
+
+//  }
+// @include media-breakpoint-up(md) { ... }
+// @include media-breakpoint-up(lg) { ... }
+// @include media-breakpoint-up(xl) { ... }
+
+
+
+
 .outer-container{
     background-color: #1E1F24;
     padding: 20px ;
@@ -27,24 +46,32 @@
     border-color: #FF6969 transparent transparent transparent;
     border-radius: 50%/100px 100px 0 0;
   }
-  .col-sm-6 {
-    -moz-hyphens:auto;
-    -ms-hyphens:auto;
-    -webkit-hyphens:auto;
-    hyphens:auto;
-    word-wrap:break-word;
- }
+//   .col-sm-6 {
+//     -moz-hyphens:auto;
+//     -ms-hyphens:auto;
+//     -webkit-hyphens:auto;
+//     hyphens:auto;
+//     word-wrap:break-word;
+//  }
 .screen{
     border: 2px solid #70E6BE;
     border-radius: 19px;
-    padding: 3px;
     color: white;
     font-size: 12px;
-    width: 62px;
-    text-align: center;
-    margin-right: 100px;
+    padding: 3px 10px 3px 10px;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+
     margin-left: 30px;
 }
+.duration{
+    font-size: 12px;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+
 
 .fa-clock{
     color:white;
@@ -54,3 +81,20 @@
 
 
 
+@media screen and (max-width: 719px) {
+    .remove-gutters {
+            margin-right: 0;
+            margin-left: 0;
+        }
+        .inner-container{
+            padding: 12px
+        }
+        .screen{
+            padding: 3px 6px ;
+            margin: 0px 0px 0px 9px;
+        }
+        .block{
+            display: flex !important;
+            justify-content: flex-start !important;
+        }
+  }
