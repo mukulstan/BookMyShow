@@ -9,19 +9,13 @@ const router = express.Router()
 
 router.post('/', async (req, res) => {
     try {
-        const { mall_id, screen_id, movie_id, user_id, number_of_tickets, seat_data, total_cost, cart_add_time } = req.body
-      
-        let scheduleData = await BookTicket.create({
-            mall_id,
-            screen_id,
-            movie_id,
-            user_id,
-            number_of_tickets,
-            seat_data,
-            total_cost,
-            cart_add_time
+        const { mallId, screenId, movieId, userId, numberOfTickets, seatData, totalCost, cartAddTime } = req.body
+            if(mallId && screenId && movieId && userId && numberOfTickets && seatData && totalCost && cartAddTime){    
+                let scheduleData = await BookTicket.create({
+                    mallId, screenId, movieId, userId, numberOfTickets, seatData, totalCost, cartAddTime
+                    })
 
-        })
+            }
       if(scheduleData){
         res.json("Ticket Added To Cart")
       }

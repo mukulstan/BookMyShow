@@ -10,6 +10,9 @@ const MovieSchema = new mongoose.Schema({
         type: String,     //in min
         required: true,
     },
+    synopsis:{
+        type:String
+    },
 
     genre: {
         type: Array,
@@ -19,6 +22,11 @@ const MovieSchema = new mongoose.Schema({
         type: Array,
         required: true
     },
+    onlineStatus: {
+        type: Boolean
+    },
+
+
     cast: [{
         actorName: {
             type: String
@@ -49,8 +57,8 @@ const MovieSchema = new mongoose.Schema({
     trailerLink: {
         type: String,
     },
-    
-    
+
+
 })
 
 module.exports = mongoose.model('movie', MovieSchema);

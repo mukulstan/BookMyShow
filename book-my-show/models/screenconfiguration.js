@@ -11,7 +11,7 @@ const ScreenConfigurtionSchema = new mongoose.Schema({
     required: true,
     minLength: 1,
   },
-  screendata: [{
+  screenData: [{
     name: {
       type: String,
       minLength: 5,
@@ -22,7 +22,7 @@ const ScreenConfigurtionSchema = new mongoose.Schema({
       type: Number,
       required: true,
     },
-    sectiondata: [{
+    sectionData: [{
       name: {
         type: String,
 
