@@ -9,13 +9,12 @@ const routes: Routes = [
   // canLoad:[LoggedInUserGuard] 
 // },
   { path: 'signup', loadChildren: () => import('./signup/signup.module').then(m => m.SignupModule) },
-  { path: 'seats-arrangement', loadChildren: () => import('./seats-arrangment/seats-arrangment.module').then(m => m.SeatsArrangmentModule) },
   { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) },
   { path: 'home', loadChildren: () => import('./homepage/homepage.module').then(m => m.HomepageModule) },
   { path: 'add-screen', loadChildren: () => import('./add-screen/add-screen.module').then(m => m.AddScreenModule) },
   { path: 'add-screen-schedule', loadChildren: () => import('./add-screen-schedule/add-screen-schedule.module').then(m => m.AddScreenScheduleModule) },
   { path: 'movie', loadChildren: () => import('./movie/movie.module').then(m => m.MovieModule) },
-  
+  { path: "seats-arrangement/:id",loadChildren: () => import('./seats-arrangment/seats-arrangment.module').then(m => m.SeatsArrangmentModule) },
   // { path: '**', component: NotfoundComponent },
   
 ];

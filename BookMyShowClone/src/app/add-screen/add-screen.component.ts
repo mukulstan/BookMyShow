@@ -87,16 +87,15 @@ onChangeSection(e,control) {
 
 
 public onSubmit(values: any) {
+    console.log("---")
     values['role']=1
     // this.submitted = true
     this.addScreenService.addScreen(values).subscribe(
       (response: any) => {
         if(response.status.code==200){
-        
+   
         }
-
-      },
-      
+      }, 
       error => {
         console.log("error",error);
         

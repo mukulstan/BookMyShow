@@ -75,7 +75,6 @@
     .heart-size{
         // color:#c9363c;
         font-size: 22px;
-        align-self: center;
     }
     
     .number{
@@ -91,11 +90,12 @@
         margin-left: 30px;
         margin-right: 4px;
     }
-    .voting-text{
-        margin-top:-8px ;
+    .voting-text,.rate-it{
+        // margin-top:-8px ;
         color:#999;
         font-size: 11px;
-        margin-bottom: 19px;
+        text-align: left;
+        // margin-bottom: 19px;
              }
     .individual-rating{
         margin-left: 8px;
@@ -107,10 +107,7 @@
     
     .rating-text{
     @extend .voting-text;
-    margin-left: 52px;
-       // margin :-10px 4px 10px 40px ;
-    
-    
+     margin-left: 30px; 
     }
     
     .animation-type{
@@ -199,6 +196,10 @@ justify-content: center !important;
 .movie-details div {
 margin-right: 0px !important;
 
+}
+.rating-container {
+    justify-content: center;
+    // align-self: center;
 }
 }
 

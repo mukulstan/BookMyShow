@@ -1,22 +1,21 @@
 <section class="mt-4">
     <div class="container">
      <div class="row">
-         
-         <div class="col-sm-3 col-6">
-            <div class="card">
+         <div *ngFor="let activeMovie of activeMovies"  class="col-sm-3 col-6">
+            <div (click)="selectedMovie(activeMovie._id)" class="card">
                 <img class="card-img-top" src="../../assets/img/pic2.jpg" alt="Card image">
                 <div class="card-body px-0">
-                  <div >
+                  <div>
                     <div class="row no-gutters">
                         <div class="col-4 col-sm-3 text-center">
-                            <div style="font-size: 13px;">31</div>
-                            <div style="font-size: 13px">Mar</div>
+                            <div style="font-size: 13px;">{{activeMovie.releaseDate | date :"dd"}} </div>
+                            <div style="font-size: 13px">{{activeMovie.releaseDate | date :"MMM"}}</div>
                         </div>
                         <div class="col-8 col-sm-9">
-                            <div class="event-title">Sunburn Club Card 2020 - 2021</div>
+                            <div class="event-title">{{activeMovie.movieName}}</div>
                             <div class="event-subtitle">Valid Across All Sunburn Events</div>
-                            <div class="event-subtitle">Music Show</div>
-                            <div class="event-subtitle">Rs 999..</div>
+                            <div  class="event-subtitle">Music Show</div>
+                            <div class="event-subtitle">{{activeMovie.movieName}}</div>
                         </div>
     
                   </div>
@@ -24,7 +23,7 @@
               </div>
         </div>
          </div>
-        <div class="col-sm-3 col-6" >
+        <!-- <div class="col-sm-3 col-6" >
             <div class="card">
                 <img class="card-img-top" src="../../assets/img/pic1.jpg" alt="Card image">
                 <div class="card-body">
@@ -43,7 +42,7 @@
                   <a href="#" class="btn btn-primary">See Profile</a>
                 </div>
               </div>
-        </div>
+        </div> -->
     
      </div>
     </div>

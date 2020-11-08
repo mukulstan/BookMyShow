@@ -11,7 +11,7 @@ export class AddScreenService {
 
   addScreen(screen){
     
-    return this.httpClient.post(this.API_URL + 'owner/screenconfiguration',
+    return this.httpClient.post(this.API_URL + 'screenConfiguration',
     {screen}).pipe(map((res) => 
     { return res }
     ));
