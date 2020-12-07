@@ -11,7 +11,7 @@ export class AddScreenScheduleService {
 
   addScreenSchedule(screen){
     
-    return this.httpClient.post(this.API_URL + 'owner/screenSchedule',
+    return this.httpClient.post(this.API_URL + 'screenSchedule',
     {screen}).pipe(map((res) => 
     { return res }
     ));

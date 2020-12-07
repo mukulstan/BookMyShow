@@ -18,4 +18,10 @@ export class SeatsArrangementService {
     ));
 
   }
+  getScreenSchedule(){
+    return this.httpClient.get(this.API_URL + 'screenSchedule').pipe(map((res) => 
+    { return res }
+    ));
+  }
+
 }
