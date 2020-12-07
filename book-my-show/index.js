@@ -21,7 +21,7 @@ const bodyParser = require('body-parser');
 app.use(express.json());
 app.use('/users/signup',user);
 app.use('/screenConfiguration',screenconfiguration);
-app.use('/owner/screenSchedule',screenSchedule);
+app.use('/screenSchedule',screenSchedule);
 app.use('/movie',movie);
 const port = process.env.PORT || 3000;
 // app.listen(port, () => console.log(`Listening on port ${port}...`));

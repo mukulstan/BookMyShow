@@ -1,7 +1,9 @@
-// const mongoose = require('mongoose');  
+const mongoose = require('mongoose');
 const ScreenSchedule = require("../models/screenschedule");
 const express = require('express')
 const router = express.Router()
+const ObjectId = mongoose.Types.ObjectId;
+const serviceResponse = require('../services/response');
 
 router.post('/', async (req, res) => {
     let mailId
@@ -92,23 +94,25 @@ router.put('/', async (req, res) => {
 
 
 
+// students:{$elemMatch:{$eq:ObjectId("51780f796ec4051a536015cf")}}
 
-router.get('/:id', async (req, res) => {                  //id here is screen id 
+
+router.get('/', async (req, res) => {                  //id here is screen id 
+    let id = "5fa86469f40d7a09f414afb1";
+    let movieId=ObjectId("5efa3ef59de42327b0e612ab")
 
     let screenScheduleData = await ScreenSchedule.aggregate([
         {
-            $match: { "screensData.screenId": ObjectId(id) },
-            $project: {
-                screensData: {
-                    $filter: {
-                        input: "$screensData",
-                        as: "screen",
-                        cond: { $eq: ["$$screensData.screenId", ObjectId(id)] }
-                    }
-                }
+            $match: {
+                $and: [
+                    { movieDate: "02-12-2020" },
+                    // { 'stores.$': 1 }
+                    {movieId: movieId}, 
+                ]
             }
         },
-        { $unwind: "$screensData.screenId" }  ,
+        { $unwind: "$screensData" },
+        { $match: { "screensData.screenId": ObjectId(id) } },
         {
             $lookup: {
                 from: "movies",
@@ -117,28 +121,20 @@ router.get('/:id', async (req, res) => {                  //id here is screen id
                 as: "movie"
             }
         },
-        { "$lookup": {
-            "from": "movies",
-            "let": { "movie": "$movieId" },
-            "pipeline": [
-              { "$match": { "$expr": { "$eq": [ "$_id", "movie" ] } } },
-              { "$project": { "movieName": 1 }}
-            ],
-            "as": "movie"
-          }},
-          { "$unwind": "$movie" },
-        {
-            $lookup: {
-                from: "screenconfigurations",
-                localField: "screensData.screenId",
-                foreignField: "_id",
-                as: "tickets"
-            },
-            $project: {
-                "movieName": 1,     
-            }
-        },
+        // {
+        //     $lookup: {
+        //         from: "screenconfigurtions",
+        //         localField: "screensData.screenId",
+        //         foreignField: "screenData._id",
+        //         as: "screenconfigurationData"
+        //     }
+        // },
     ])
+    if (screenScheduleData) {
+        return serviceResponse.response(res, 'SUCCESS', 'DETAIL', screenScheduleData)
+    }
+
+    console.log("screenScheduleData", JSON.stringify(screenScheduleData))
 })
 
 

@@ -6,6 +6,10 @@ const ScreenScheduleSchema = new mongoose.Schema({
         type: String,
         // required: true,
     },
+    movieDate: {
+        type: String,
+        // required: true,
+    },
     movieId: {
         type: Schema.Types.ObjectId,
         ref: 'movies'
@@ -15,16 +19,7 @@ const ScreenScheduleSchema = new mongoose.Schema({
         type: Array,
         // required: true,
     },
-    movieTimeArray: [{
-        movieStartTime: {
-            type: String,
-            required: true,
-        },
-        movieEndTime: {
-            type: String,
-            // required: true,
-        }
-    }],
+   
 
     showCount: {
         type: Number
@@ -34,19 +29,24 @@ const ScreenScheduleSchema = new mongoose.Schema({
         screenId: {
             type: String
         },
+        movieStartTime: {
+            type: String,
+            required: true,
+        },
+        startDate: {
+            type: String,
+            // required: true,
+        },
+        endDate: {
+            type: String,
+            // required: true,
+        },
         ticketSectionArray: [{
             sectionName: { type: String },
             ticketPerSection: { type: Number },
         }],
     }],
-    startDate: {
-        type: String,
-        required: true,
-    },
-    endDate: {
-        type: String,
-        required: true,
-    },
+   
 })
 
 module.exports = mongoose.model('screenSchedule', ScreenScheduleSchema);
