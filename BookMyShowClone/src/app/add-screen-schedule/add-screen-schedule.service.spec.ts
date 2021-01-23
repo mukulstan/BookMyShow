@@ -10,7 +10,5 @@ describe('AddScreenScheduleService', () => {
     service = TestBed.inject(AddScreenScheduleService);
   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
+  
 });

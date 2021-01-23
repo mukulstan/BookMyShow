@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { SeatsArrangementService } from './seats-arrangement.service'
 @Component({
   selector: 'app-seats-arrangment',
@@ -10,7 +10,7 @@ export class SeatsArrangmentComponent implements OnInit {
   cartArray=[]
   totalTicketPrice:number=0
   seatSelected:boolean=false
-  constructor(public seatsArrangementService: SeatsArrangementService) { }
+  constructor(public seatsArrangementService: SeatsArrangementService,private el: ElementRef) { }
 
   ngOnInit(): void {
     let screenScheduleData
@@ -20,9 +20,11 @@ export class SeatsArrangmentComponent implements OnInit {
         console.log("response", screenScheduleData)
         this.seatsArrangementService.getScreenArrangement().subscribe(
           (response: any) => {
-            console.log("res", response.data.screenData[0])
+           
             this.screenData = response.data.screenData[0].sectionData
             let ticketObject
+            let seatNumber = 0
+            console.log("res", this.screenData)
             this.screenData.forEach((sectionData) => {
               ticketObject = screenScheduleData.screensData.ticketSectionArray.find(screenSection => {
                 return screenSection.sectionName == sectionData.name
@@ -30,18 +32,18 @@ export class SeatsArrangmentComponent implements OnInit {
               sectionData.ticketPrice = ticketObject.ticketPerSection
               sectionData.seatsInRow.forEach((element, index) => {
                 let emptySpaceIndex = 0;
-                let seatNumber = 0
-
-                element.seatsArray = Array(element.totalSeatSpaces).fill(0).map((x, i) => {
+              element.seatsArray = Array(element.totalSeatSpaces).fill(0).map((x, i) => {
                   for (let j = emptySpaceIndex; j < element.emptySpaces.length; j++) {
                     if (element.emptySpaces[j] == ++i) {
                       emptySpaceIndex = ++j;
                       return { emptySpacey: true }
                     }
-                    return { emptySpacey: false, seatNumber: ++seatNumber }
+                    // console.log("---",sectionData)
+                    return { emptySpacey: false, seatNumber: sectionData.seats[index].seatsInRow[seatNumber++] }
                   }
-                  return { emptySpacey: false, seatNumber: ++seatNumber }
+                  return { emptySpacey: false, seatNumber: sectionData.seats[index].seatsInRow[seatNumber++] }
                 })
+                seatNumber=0
               })
             })
             console.log("screenData", this.screenData)
@@ -56,6 +58,8 @@ export class SeatsArrangmentComponent implements OnInit {
 
   bookTicket(seatSelected,sectionObject) {
     let removeIndex
+    let keyField: HTMLInputElement = this.el.nativeElement.querySelector("#" + "id" + seatSelected.seatNumber);
+			keyField.className += " " + "seat-icon-selected";
     console.log("se",seatSelected,sectionObject)
   let seat= this.cartArray.find((cartObject,index)=>{
     removeIndex=index
@@ -92,3 +96,8 @@ export class SeatsArrangmentComponent implements OnInit {
   //      else{
   //       this.totalTicketPrice=ticketPrice
   // }
+
+ 
+
+
+  

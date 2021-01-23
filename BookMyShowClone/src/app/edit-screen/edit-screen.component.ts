@@ -10,6 +10,7 @@ export class EditScreenComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }
