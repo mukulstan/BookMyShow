@@ -15,7 +15,7 @@ export class HomepageComponent implements OnInit {
       (response: any) => {
         if(response.status.code==200){
           this.activeMovies=response.data  
-          console.log("response",response.data)
+          console.log("212",response.data)
         }},
       error => {
         console.log("error",error);
@@ -24,6 +24,7 @@ export class HomepageComponent implements OnInit {
   }
 
   selectedMovie(movieId){
+    console.log("error22",movieId);
     this.router.navigate(['movie/details/'+movieId])
    
   }

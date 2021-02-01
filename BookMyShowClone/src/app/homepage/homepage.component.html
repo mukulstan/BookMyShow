@@ -1,10 +1,10 @@
 <section class="mt-4">
     <div class="container">
      <div class="row">
-         <div *ngFor="let activeMovie of activeMovies"  class="col-sm-3 col-6">
+         <div *ngFor="let activeMovie of activeMovies"  class="col-sm-3 col-6 test">
             <div (click)="selectedMovie(activeMovie._id)" class="card">
-                <img class="card-img-top" src="../../assets/img/pic2.jpg" alt="Card image">
-                <div class="card-body px-0">
+                <img (click)="selectedMovie(activeMovie._id)" class="card-img-top" src="../../assets/img/pic2.jpg" alt="Card image">
+                <div (click)="selectedMovie(activeMovie._id)" class="card-body px-0">
                   <div>
                     <div class="row no-gutters">
                         <div class="col-4 col-sm-3 text-center">

@@ -10,6 +10,8 @@ export class SeatsArrangmentComponent implements OnInit {
   cartArray=[]
   totalTicketPrice:number=0
   seatSelected:boolean=false
+  // cartObject= new Map();
+  cartObject={}
   constructor(public seatsArrangementService: SeatsArrangementService,private el: ElementRef) { }
 
   ngOnInit(): void {
@@ -58,9 +60,10 @@ export class SeatsArrangmentComponent implements OnInit {
 
   bookTicket(seatSelected,sectionObject) {
     let removeIndex
+    console.log("se==",seatSelected,sectionObject)
     let keyField: HTMLInputElement = this.el.nativeElement.querySelector("#" + "id" + seatSelected.seatNumber);
-			keyField.className += " " + "seat-icon-selected";
-    console.log("se",seatSelected,sectionObject)
+      keyField.classList.add('seat-icon-selected')
+    
   let seat= this.cartArray.find((cartObject,index)=>{
     removeIndex=index
     return cartObject.seatNumber==seatSelected.seatNumber
@@ -70,15 +73,22 @@ export class SeatsArrangmentComponent implements OnInit {
     if(!seat){
      this.totalTicketPrice= this.totalTicketPrice>0 ? this.totalTicketPrice+ticketPrice :ticketPrice
      console.log("totalTicketPrice",this.totalTicketPrice)
-         this.cartArray.push({seatNumber:seatSelected.seatNumber})
+         this.cartArray.push({seatNumber:seatSelected.seatNumber,ticketPrice:ticketPrice})
          this.seatSelected=true
     }
     else{
       this.cartArray.splice(removeIndex,1)
       this.totalTicketPrice= this.totalTicketPrice-ticketPrice
       this.seatSelected=false
+      keyField.classList.remove('seat-icon-selected')
     }
-    console.log("cartArray",this.cartArray,this.totalTicketPrice)
+    console.log('cartArray',this.cartArray)
+    this.cartObject['totalTicketPrice']=this.totalTicketPrice
+    this.cartObject['cartArray']=this.cartArray
+    // this.cartObject.set('cartArray',this.cartArray)
+    console.log("cartObjectrray",this.cartObject)
+    // this.cartObject.set('totalTicketPrice',this.totalTicketPrice)
+    
     
   }
   

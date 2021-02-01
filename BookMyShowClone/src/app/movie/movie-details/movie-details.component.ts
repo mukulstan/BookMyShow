@@ -10,10 +10,12 @@ export class MovieDetailsComponent implements OnInit {
 
   constructor(private movieService:MovieService,private route: ActivatedRoute,private router: Router) { }
   movieId:string
-  
+  movieName:string
   ngOnInit(): void {
-   this.route.params.subscribe(
+    console.log('2',this.route.paramMap)
+   this.route.paramMap.subscribe(
       params => {
+        console.log('idde',params)
           this.movieId = params['id'];
       },
       error => {
@@ -21,7 +23,9 @@ export class MovieDetailsComponent implements OnInit {
       });
  this.movieService.movieDetails(this.movieId).subscribe(
       (response:any) =>{
-        console.log("res",response)
+        console.log("res12",response)
+        this.movieName=response.movieName
+        
       },
       error => {
         console.log(error);
