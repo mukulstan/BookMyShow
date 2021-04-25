@@ -12,7 +12,11 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { AngularMaterialModule } from './angular-material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MovieDetailsComponent } from './movie/movie-details/movie-details.component';
+// import { MovieDetailsComponent } from './movie/movie-details/movie-details.component';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import {MovieReducer} from './reducers/movie.reducers';
+import {MovieEffects} from './effects/movie.effects'
 
 
 @NgModule({
@@ -21,7 +25,7 @@ import { MovieDetailsComponent } from './movie/movie-details/movie-details.compo
     AddScreenComponent,
     AddMovieComponent,
     AddScreenScheduleComponent,
-    MovieDetailsComponent,
+    // MovieDetailsComponent,
 
 
   ],
@@ -30,7 +34,8 @@ import { MovieDetailsComponent } from './movie/movie-details/movie-details.compo
     AppRoutingModule,
     HttpClientModule,
     AngularMaterialModule,
-    FormsModule, ReactiveFormsModule, BrowserAnimationsModule 
+    FormsModule, ReactiveFormsModule, BrowserAnimationsModule,
+     
     
 
 
